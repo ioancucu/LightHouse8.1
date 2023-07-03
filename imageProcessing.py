@@ -5,12 +5,8 @@ import numpy as np
 # Read the image
 image = cv2.imread("C:\\Users\\cucui\\Downloads\\archive (3)\\trainingSet\\trainingSet\\4\\img_122.jpg", cv2.IMREAD_GRAYSCALE)
 image_float = image.astype(np.float32)
-print (image_float)
+
 normalized_image = (image_float - np.min(image_float)) / (np.max(image_float) - np.min(image_float))
-print (np.min(image_float))
-print (np.max(image_float))
-       
-print (normalized_image)
 plt.imshow(normalized_image)
 plt.axis("off")  # Remove axis ticks and labels
 plt.show()
@@ -22,6 +18,3 @@ for row in range(image.shape[0]):
     for col in range(image.shape[1]):
         # Get the pixel values
         pixel = image[row, col]
-
-        # Print the pixel values
-        print(pixel)
